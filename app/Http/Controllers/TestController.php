@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('remember.files')->only('store');
+    }
+
     public function store(Request $request)
     {
         return redirect()->back();

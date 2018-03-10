@@ -11,10 +11,8 @@
 |
 */
 
-Route::group(['middleware'=>['remember.files']], function() {
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
-    Route::post('test', ['as'=>'test', 'uses'=>'TestController@store']);
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::post('test', ['as'=>'test', 'uses'=>'TestController@store']);

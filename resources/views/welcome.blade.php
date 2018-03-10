@@ -70,7 +70,8 @@
                 {{ csrf_field() }}
 
                 @if( $oldFile = rememberedFile('image'))
-                    <p>Hello! {{ $oldFile->getFilename() }}</p>
+                    <p>Image Remembered: {{ $oldFile->getFilename() }}</p>
+                    <input type="hidden" name="_rememberedFiles[image]" value="{{ $oldFile->getFilename() }}">
                 @else
                     <input type="file" name="image">
                 @endif
